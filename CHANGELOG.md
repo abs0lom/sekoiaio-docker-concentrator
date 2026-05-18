@@ -2,6 +2,14 @@
 
 All notable changes with sekoiaio concentrator will be documented in this file.
 
+## [2.7.5]
+
+- Add `action.resumeRetryCount=-1` and `action.resumeInterval=30` to all output actions:
+  - Fixes issue where rsyslog would suspend forwarding actions after network outages
+  - Ensures queued logs are reliably resent when connectivity is restored
+  - Prevents data loss during temporary network interruptions
+  - Applies to TCP, RELP, and stats monitoring output actions in all templates (template.j2, template_tls.j2, stats_template.j2)
+
 ## [2.7.4]
 
 - Update default regional intake endpoint

@@ -12,5 +12,7 @@ action(
     StreamDriverAuthMode="x509/name"
     StreamDriverPermittedPeers="{{ endpoint }}"
     Template="SEKOIAIO_stats_Template"
+    action.resumeRetryCount="-1"
+    action.resumeInterval="10"
     )
 }
