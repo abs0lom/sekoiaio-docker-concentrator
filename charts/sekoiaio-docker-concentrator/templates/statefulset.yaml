@@ -42,7 +42,7 @@ spec:
           env:
             - name: DISK_SPACE
               {{- if .Values.persistence.enabled }}
-              value: {{ .Values.persistence.size | quote }}
+              value: {{ .Values.persistence.size | replace "Gi" "g" | quote }}
               {{- else }}
               value: {{ .Values.disk_space | quote }}
               {{- end }}
